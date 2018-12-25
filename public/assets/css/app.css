@@ -1,0 +1,85 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+.todo{
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 30vh;
+    position: relative;
+}
+.add{
+    font-size: 0;
+}
+.add input::placeholder{
+    font-size: 1.2rem;
+    color: rgb(196, 192, 192);
+}
+.write{
+    display: block;
+    height: 40px;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+.write:focus{
+    outline: 3px solid rgba(145, 64, 170, 0.452);
+}
+.btn-add{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    height: 30px;
+    background: rgb(88, 87, 87);
+    width: 80px;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+}
+.btn-add:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.list{
+    margin-top: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.item{
+    display: block;
+    margin-bottom: 15px;
+}
+.container{
+    height: 40px;
+}
+.char{
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(99, 97, 97, 0.4) inset;
+}
+.btn{
+    display: block;
+    height: 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(99, 97, 97, 0.4) inset;
+    border-radius: 50%;
+    outline: none;
+}
+.btn:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.btn-finish{
+    color: rgba(137, 74, 209, 0.6);
+}
+.btn-delete{
+    color: rgba(233, 60, 60, 0.4);
+}
