@@ -10,7 +10,7 @@
 <div class="todo">
     <div class="add">
     <?php echo Form::open(array('action' => 'todo/add', 'method' => 'post')); ?>
-    <?php echo Form::input('note','', array('placeholder' => 'ここにtodoを記入', 'class' => 'write')); ?>
+    <?php echo Form::input('note','', array('autocomplete' => 'off', 'placeholder' => 'ここにtodoを記入', 'class' => 'write')); ?>
     <?php echo Form::submit('post', '追加', array('class' => 'btn-add')); ?>
     <?php echo Form::close(); ?>
     </div>

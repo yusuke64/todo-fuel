@@ -7,6 +7,6 @@ $(function(){
             setTimeout( function() {
                 $('#js-done').off( 'submit' );
                 $('#js-done').submit();
-            }, 3000);
+            }, 2200);
         });
 });
