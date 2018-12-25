@@ -3,8 +3,10 @@
 <head>
     <title>Todo</title>
     <?php echo Asset::css('app.css'); ?>
+    <?php echo Asset::js('jquery.js'); ?>
 </head>
 <body>
+<p id="js-slide" class="slide-msg">お疲れ様でした！</p>
 <div class="todo">
     <div class="add">
     <?php echo Form::open(array('action' => 'todo/add', 'method' => 'post')); ?>
@@ -18,7 +20,7 @@
         <?php $todoId = $todo->id; ?>
              <tr class="item">
                 <td class="container">
-                <?php echo Form::open(array('action' => "todo/delete/{$todoId}", 'method' => 'post')); ?>
+                <?php echo Form::open(array('action' => "todo/delete/{$todoId}", 'method' => 'post', 'id' => 'js-done')); ?>
                 <?php echo Form::submit('post', '完了', array('class' => 'btn btn-finish')); ?>
                 <?php echo Form::close(); ?>
                 </td>
@@ -33,5 +35,6 @@
         </tbody>
     </table>
 </div>
+<?php echo Asset::js('app.js'); ?>
 </body>
 </html>

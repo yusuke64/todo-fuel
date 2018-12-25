@@ -10,7 +10,6 @@
     <title>Todo Application - Add</title>
 </head>
 <body>
-    <?php echo $showTodoLink; ?>
     <?php echo Form::open(array('action' => 'todo/add', 'method' => 'post')); ?>
     <div>
         <label>note</label>
