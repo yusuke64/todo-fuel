@@ -1,11 +1,115 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
+input::placeholder{
+    color: rgb(172, 167, 167);
+}
+input[type="submit"],
+a{
+    outline: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus{
+    outline: 3px solid rgba(145, 64, 170, 0.4);
+}
+body{
+    font-size: 62.5%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.main{
+    position: relative;
+    padding-top: 20vh;
+}
 
+@media(max-width:414px){
+    .main{
+        padding-top: 15vh;
+    }
+}
+
+
+/* -------------------------------------
+* header
+* ----------------------------------- */
+.header{
+    background: rgba(75, 152, 240, 0.5);
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 0 50px #fff inset;
+    line-height: 80px;
+    overflow: hidden;
+    margin: 0;
+}
+.site-title{
+    color: #fff;
+    font-size: 2rem;
+    margin-left: 150px;
+    float: left;
+}
+.menu{
+    float: right;
+    height: 80px;
+    margin-right: 100px;
+}
+.menu-item{
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 1rem;
+}
+.menu-item-link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.menu-item-link:hover{
+    text-decoration: underline;
+}
+
+@media(max-width:768px){
+    .menu-item-link:hover{
+        text-decoration: none;
+    }
+    .site-title{
+        font-size: 1.5rem;
+        margin-left: 60px;
+    }
+    .menu{
+        height: 60px;
+        margin-right: 30px;
+    }
+    .menu-item{
+        margin-right: 30px;
+        font-size: 1rem;
+    }
+}
+@media(max-width:414px){
+    .header{
+        height: 60px;
+        line-height: 60px;
+    }
+    .site-title{
+        font-size: 1.2rem;
+        margin-left: 30px;
+    }
+    .menu{
+        height: 60px;
+        margin-right: 0;
+    }
+    .menu-item{
+        margin-right: 20px;
+        font-size: 0.7rem;
+    }
+}
+
+/* -------------------------------------
+* todo
+* ----------------------------------- */
 .todo{
     margin: 0 auto;
     width: 30%;
-    margin-top: 30vh;
     position: relative;
 }
 .add{
@@ -13,7 +117,6 @@
 }
 .add input::placeholder{
     font-size: 1.2rem;
-    color: rgb(196, 192, 192);
 }
 .write{
     display: block;
@@ -22,10 +125,6 @@
     font-size: 1.2rem;
     padding: 5px;
     border-radius: 5px;
-    outline: none;
-}
-.write:focus{
-    outline: 3px solid rgba(145, 64, 170, 0.452);
 }
 .btn-add{
     display: block;
@@ -34,7 +133,7 @@
     font-weight: bold;
     font-size: 0.8rem;
     height: 30px;
-    background: rgb(88, 87, 87);
+    background:rgba(30, 30, 31, 0.8);
     width: 80px;
     color: #fff;
     border-radius: 5px;
@@ -51,27 +150,32 @@
 }
 .item{
     display: block;
-    margin-bottom: 15px;
+    height: 40px;
+    margin-bottom: 20px;
+    line-height: 40px;
 }
 .container{
-    height: 40px;
 }
 .char{
-    padding: 5px 10px;
+    border: none;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(99, 97, 97, 0.4) inset;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(99, 97, 97, 0.4) inset;
 }
-.btn{
-    display: block;
+.btn-todo{
+    font-size: 0.7rem;
     height: 40px;
-    font-size: 0.8rem;
+    width: 40px;
     font-weight: bold;
     box-shadow: 0 0 5px rgba(99, 97, 97, 0.4) inset;
     border-radius: 50%;
-    outline: none;
+    background: #fff;
+}
+.btn-todo:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }
 .btn:hover{
     opacity: 0.7;
@@ -85,7 +189,8 @@
 }
 .slide-msg{
     display: none;
-    background: rgba(92, 176, 233, 0.2);
+    box-shadow: 0 0 30px rgba(145, 64, 170, 0.2) inset;
+    border-radius: 2px;
     font-size: 1.1rem;
     text-align: center;
     margin: 0;
@@ -95,4 +200,120 @@
     width: 100%;
     height: 40px;
     line-height: 40px;
+    color: rgb(90, 86, 86);
 }
+.slide-msg-add{
+    background: rgb(229, 242, 245);
+    top: 0;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+@media(max-width:768px){
+    .todo{
+        width: 50%;
+    }
+    .btn-add:hover,
+    .btn:hover,
+    .btn-todo:hover{
+        opacity: 1;
+        cursor: none;
+    }
+    .write{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .slide-msg-add{
+        width: 90%;
+        left: 5%;
+    }
+}
+@media(max-width:414px){
+    .todo{
+        width: 90%;
+    }
+    .slide-msg{
+        font-size: 0.9rem;
+    }
+}
+
+/* --------------------------------------------
+* form
+* ------------------------------------------ */
+.form{
+    width: 30%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.user{
+    width: 100%;
+    display: block;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    padding-left: 5px;
+    border: 1px solid rgba(180, 178, 178, 0.5);
+}
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+.error{
+    color: rgb(228, 98, 98);
+}
+.error-msg{
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.btn-user{
+    display: block;
+    float: right;
+    margin: 10px 20px 0 0;
+    font-size: 1rem;
+    border:1px solid rgba(75, 152, 240, 0.5);
+    border-radius: 1px;
+    width: 30%;
+    height: 30px;
+    padding: 3px ;
+    color: rgb(100, 98, 98);
+    background: #fff;
+    outline: none;
+}
+
+@media(max-width:768px){
+    .form{
+        width: 50%;
+    }
+}
+@media(max-width:414px){
+    .form{
+        width: 90%;
+    }
+}
+
+/* ---------------------------------------
+* footer
+* -------------------------------------- */
+.footer{
+    background: rgba(75, 152, 240, 0.5);
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0 0 50px #fff inset;
+    margin: 0;
+    margin-top: auto;
+    text-align: center;
+}
+.foot-text{
+    font-size: 1rem;
+    color: #fff;
+}
+
+@media(max-width:414px){
+    .foot-text{
+        font-size: 0.8rem;
+    }
+}
+
