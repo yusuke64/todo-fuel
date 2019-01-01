@@ -4,7 +4,7 @@ class Controller_Todo extends Controller
     public function action_index()
     {
         $name = Session::get('name');
-        if (empty($name))
+        if ($name === null)
         {
             //return Response::forge(View::forge('auth/login'));
             $view = View::forge('template/index');
@@ -16,7 +16,6 @@ class Controller_Todo extends Controller
             return $view;
 
         }
-
         $todos = Model_Todo::find('all', array(
             'where' => array(
                 array('name' => $name),
@@ -48,7 +47,7 @@ class Controller_Todo extends Controller
 
         }
         $name = Session::get('name');
-        if (empty($name))
+        if ($name === null)
         {
             //return Response::forge(View::forge('auth/login'));
             $view = View::forge('template/index');
@@ -84,7 +83,7 @@ class Controller_Todo extends Controller
     public function action_delete($todoId = null)
     {
         $name = Session::get('name');
-        if (empty($name))
+        if ($name === null)
         {
             //return Response::forge(View::forge('auth/login'));
             $view = View::forge('template/index');
@@ -121,8 +120,6 @@ class Controller_Todo extends Controller
             return $view;
 
         }
-
-        $note= Input::post('note');
 
         $todo = Model_Todo::find($todoId);
         $todo->delete();
@@ -141,7 +138,7 @@ class Controller_Todo extends Controller
     public function action_done($todoId = null)
     {
         $name = Session::get('name');
-        if (empty($name))
+        if ($name === null)
         {
             //return Response::forge(View::forge('auth/login'));
             $view = View::forge('template/index');
@@ -178,8 +175,6 @@ class Controller_Todo extends Controller
             return $view;
 
         }
-
-        $note= Input::post('note');
 
         $todo = Model_Todo::find($todoId);
         $todo->delete();

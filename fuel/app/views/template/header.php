@@ -24,7 +24,7 @@
 <header class="header">
     <h1 class="site-title">Fuel-ToDo</h1>
     <ul class="menu">
-        <?php if(empty($name)){ ?>
+        <?php if ($name === null){ ?>
         <li class="menu-item"><?php echo $signupLink; ?></li>
         <li class="menu-item"><?php echo $loginLink; ?></li>
         <?php }else{ ?>
